@@ -6,11 +6,11 @@ from pathlib import Path
 from typing import Optional
 
 import click
-from chia.types.spend_bundle import SpendBundle
+from cactus.types.spend_bundle import SpendBundle
 
-from chianft import __version__
-from chianft.util.clients import get_node_and_wallet_clients
-from chianft.util.mint import Minter
+from cactusnft import __version__
+from cactusnft.util.clients import get_node_and_wallet_clients
+from cactusnft.util.mint import Minter
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -22,7 +22,7 @@ def monkey_patch_click() -> None:
 
 
 @click.group(
-    help="\n  NFT minting for Chia Blockchain \n",
+    help="\n  NFT minting for Cactus Blockchain \n",
     context_settings=CONTEXT_SETTINGS,
 )
 @click.version_option(__version__)

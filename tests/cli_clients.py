@@ -3,19 +3,19 @@ from secrets import token_bytes
 from typing import Any, Dict, List, Optional
 
 from blspy import G2Element
-from chia.clvm.spend_sim import SimClient, SpendSim
-from chia.consensus.default_constants import DEFAULT_CONSTANTS
-from chia.types.announcement import Announcement
-from chia.types.blockchain_format.coin import Coin
-from chia.types.blockchain_format.program import Program
-from chia.types.blockchain_format.sized_bytes import bytes32
-from chia.types.coin_spend import CoinSpend
-from chia.types.mempool_inclusion_status import MempoolInclusionStatus
-from chia.types.spend_bundle import SpendBundle
-from chia.util.bech32m import encode_puzzle_hash
-from chia.util.ints import uint64
-from chia.wallet.util.wallet_types import WalletType
-from chia.wallet.wallet_info import WalletInfo
+from cactus.clvm.spend_sim import SimClient, SpendSim
+from cactus.consensus.default_constants import DEFAULT_CONSTANTS
+from cactus.types.announcement import Announcement
+from cactus.types.blockchain_format.coin import Coin
+from cactus.types.blockchain_format.program import Program
+from cactus.types.blockchain_format.sized_bytes import bytes32
+from cactus.types.coin_spend import CoinSpend
+from cactus.types.mempool_inclusion_status import MempoolInclusionStatus
+from cactus.types.spend_bundle import SpendBundle
+from cactus.util.bech32m import encode_puzzle_hash
+from cactus.util.ints import uint64
+from cactus.wallet.util.wallet_types import WalletType
+from cactus.wallet.wallet_info import WalletInfo
 
 ACS = Program.to(1)
 ACS_PH = ACS.get_tree_hash()
@@ -88,10 +88,10 @@ class WalletClientMock:
     async def _assign_did(self):
         coins = await self.select_coins(1, 1)
         self.did_coin = coins[0]
-        self.did_id = encode_puzzle_hash(self.did_coin.name(), "did:chia:")
+        self.did_id = encode_puzzle_hash(self.did_coin.name(), "did:cactus:")
 
     async def get_nft_wallet_did(self, wallet_id):
-        did_addr = encode_puzzle_hash(self.did_coin.puzzle_hash, "did:chia:")
+        did_addr = encode_puzzle_hash(self.did_coin.puzzle_hash, "did:cactus:")
         return {"did_id": did_addr, "success": True}
 
     async def get_did_id(self, wallet_id):

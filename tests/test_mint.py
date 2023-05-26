@@ -4,12 +4,12 @@ import csv
 from secrets import token_bytes
 
 import pytest
-from chia.types.blockchain_format.sized_bytes import bytes32
-from chia.util.bech32m import encode_puzzle_hash
+from cactus.types.blockchain_format.sized_bytes import bytes32
+from cactus.util.bech32m import encode_puzzle_hash
 from click.testing import CliRunner, Result
 from faker import Faker
 
-from chianft.cmds.cli import cli
+from cactusnft.cmds.cli import cli
 
 
 def create_metadata(filename: str, mint_total: int, has_targets: bool) -> str:

@@ -55,11 +55,11 @@ jobs:
           else
             . ./venv/bin/activate
           fi
-          pip install --extra-index https://pypi.chia.net/simple/ --editable .[dev]
-          chia init
-          echo -ne "\n" | chia dev sim create
-          export CHIA_ROOT=~/.chia/simulator/main/
-          chia start wallet
+          pip install --extra-index https://pypi.cactus.net/simple/ --editable .[dev]
+          cactus init
+          echo -ne "\n" | cactus dev sim create
+          export CACTUS_ROOT=~/.cactus/simulator/main/
+          cactus start wallet
           sleep 10
-          chia wallet did create
+          cactus wallet did create
           pytest -n 0 tests/test_mint.py

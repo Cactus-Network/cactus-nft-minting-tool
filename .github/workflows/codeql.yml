@@ -55,7 +55,7 @@ jobs:
     - run: |
        python -m venv venv
        source venv/bin/activate
-       pip install --extra-index https://pypi.chia.net/simple/ --editable .[dev]
+       pip install --extra-index https://pypi.cactus.net/simple/ --editable .[dev]
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2

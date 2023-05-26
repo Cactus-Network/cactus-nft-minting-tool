@@ -3,12 +3,12 @@ from typing import Optional, Tuple
 
 import aiohttp
 
-# from chia.cmds.wallet_funcs import get_wallet
-from chia.rpc.full_node_rpc_client import FullNodeRpcClient
-from chia.rpc.wallet_rpc_client import WalletRpcClient
-from chia.util.config import load_config
-from chia.util.default_root import DEFAULT_ROOT_PATH
-from chia.util.ints import uint16
+# from cactus.cmds.wallet_funcs import get_wallet
+from cactus.rpc.full_node_rpc_client import FullNodeRpcClient
+from cactus.rpc.wallet_rpc_client import WalletRpcClient
+from cactus.util.config import load_config
+from cactus.util.default_root import DEFAULT_ROOT_PATH
+from cactus.util.ints import uint16
 
 
 async def get_node_client(

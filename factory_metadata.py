@@ -4,8 +4,8 @@ import sys
 from secrets import token_bytes
 from typing import Any, List
 
-from chia.types.blockchain_format.sized_bytes import bytes32
-from chia.util.bech32m import encode_puzzle_hash
+from cactus.types.blockchain_format.sized_bytes import bytes32
+from cactus.util.bech32m import encode_puzzle_hash
 from faker import Faker
 
 fake = Faker()

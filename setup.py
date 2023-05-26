@@ -4,7 +4,7 @@ with open("README.md", "rt", encoding="UTF-8") as fh:
     long_description = fh.read()
 
 dependencies = [
-    "chia-blockchain==1.8.1",
+    "cactus-blockchain==1.8.1",
     "packaging==23.0",
 ]
 
@@ -40,22 +40,22 @@ dev_dependencies = [
 ]
 
 setup(
-    name="chianft",
+    name="cactusnft",
     version="0.1",
     packages=find_packages(exclude=("tests",)),
-    author="Geoff Walmsley",
+    author="Dommer",
     entry_points={
-        "console_scripts": ["chianft = chianft.cmds.cli:main"],
+        "console_scripts": ["cactusnft = cactusnft.cmds.cli:main"],
     },
     package_data={
         "": ["*.clvm", "*.clvm.hex", "*.clib", "*.clsp", "*.clsp.hex"],
     },
-    author_email="g.walmsley@chia.net",
+    author_email="dommer@cactus-network.net",
     setup_requires=["setuptools_scm"],
     install_requires=dependencies,
-    url="https://github.com/Chia-Network",
+    url="https://github.com/Cactus-Network",
     license="https://opensource.org/licenses/Apache-2.0",
-    description="Chia NFT minting toolkit",
+    description="Cactus NFT minting toolkit",
     long_description=long_description,
     long_description_content_type="text/markdown",
     classifiers=[
@@ -70,7 +70,7 @@ setup(
         dev=dev_dependencies,
     ),
     project_urls={
-        "Bug Reports": "https://github.com/Chia-Network/chia-nft-minting-tool",
-        "Source": "https://github.com/Chia-Network/chia-nft-minting-tool",
+        "Bug Reports": "https://github.com/Cactus-Network/cactus-nft-minting-tool",
+        "Source": "https://github.com/Cactus-Network/cactus-nft-minting-tool",
     },
 )
